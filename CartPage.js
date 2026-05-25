@@ -53,7 +53,7 @@ export default function CartPage({ cart, user, removeFromCart, clearCart }) {
       if (itemsError) throw itemsError
 
       // 3. Telegram notification (bot webhook orqali)
-      await fetch(`${process.env.REACT_APP_BOT_API_URL}/notify-order`, {
+      await fetch(`https://baraka-savdo-bot.onrender.com/notify-order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
