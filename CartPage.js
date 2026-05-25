@@ -63,7 +63,7 @@ export default function CartPage({ cart, user, removeFromCart, clearCart }) {
           total,
           note
         })
-      }).catch(() => {}) // Bot xatosi buyurtmani bloklamas
+      }).catch((err) => { console.error('BOT ERROR:', err) }) // Bot xatosi buyurtmani bloklamas
 
       clearCart()
       tg?.HapticFeedback?.notificationOccurred('success')
